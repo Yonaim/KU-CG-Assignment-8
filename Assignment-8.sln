@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Q1-immediate-render", "Q1-immediate-render\Q1-immediate-render.vcxproj", "{409B2E99-A7B0-4D55-BBAC-D283C2C8D6BE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Q2-modern-render", "Q2-modern-render\Q2-modern-render.vcxproj", "{B9CD311E-E188-4FF0-979F-B642321E6938}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{409B2E99-A7B0-4D55-BBAC-D283C2C8D6BE}.Debug|x86.ActiveCfg = Debug|Win32
+		{409B2E99-A7B0-4D55-BBAC-D283C2C8D6BE}.Debug|x86.Build.0 = Debug|Win32
+		{409B2E99-A7B0-4D55-BBAC-D283C2C8D6BE}.Release|x86.ActiveCfg = Release|Win32
+		{409B2E99-A7B0-4D55-BBAC-D283C2C8D6BE}.Release|x86.Build.0 = Release|Win32
+		{B9CD311E-E188-4FF0-979F-B642321E6938}.Debug|x86.ActiveCfg = Debug|Win32
+		{B9CD311E-E188-4FF0-979F-B642321E6938}.Debug|x86.Build.0 = Debug|Win32
+		{B9CD311E-E188-4FF0-979F-B642321E6938}.Release|x86.ActiveCfg = Release|Win32
+		{B9CD311E-E188-4FF0-979F-B642321E6938}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8F4779D-E2EC-461F-8B39-94A318AE5556}
+	EndGlobalSection
+EndGlobal
