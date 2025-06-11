@@ -11,13 +11,13 @@ enum RenderMode
 	MODE_IMMEDIATE,
 	MODE_MODERN
 };
-const RenderMode MODE = MODE_IMMEDIATE;
+
+// const RenderMode MODE = MODE_IMMEDIATE;
 // const RenderMode MODE = MODE_MODERN;
 
 #define WIN_WIDTH  512
 #define WIN_HEIGHT 512
 
-// FPS 계산용
 float  gTotalTimeElapsed = 0;
 int    gTotalFrames      = 0;
 GLuint gTimer;
@@ -36,14 +36,18 @@ float stop_timing()
 	glGetQueryObjectui64v(gTimer, GL_QUERY_RESULT, &result);
 	return result / 1e9f;
 }
+void init_immediate();
 
-void render(GLFWwindow *window)
+	void render(GLFWwindow *window)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	start_timing();
 
 	if (MODE == MODE_IMMEDIATE)
-		render_immediate();
+    {
+        init_immediate();
+		render_immediate(window);
+    }
 	else
 		render_modern();
 
@@ -60,19 +64,15 @@ void render(GLFWwindow *window)
 int main()
 {
 
-	// GLFW 초기화
 	glfwInit();
 
 	if (MODE == MODE_IMMEDIATE)
 	{
-		// 즉시모드: 2.1 (레거시 지원, fixed-pipeline)
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
-		// OpenGL 2.1은 별도 프로파일 필요 없음!
 	}
 	else
 	{
-		// 모던모드: 3.3 Core (셰이더, VAO/VBO)
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -82,8 +82,6 @@ int main()
 		= glfwCreateWindow(WIN_WIDTH, WIN_HEIGHT, "OpenGL Bunny", NULL, NULL);
 	if (!window)
 	{
-		printf("wtf\n");
-
 		glfwTerminate();
 		return -1;
 	}
@@ -97,9 +95,8 @@ int main()
 
 	load_mesh("bunny.obj");
 	if (MODE == MODE_MODERN)
-		render_modern_init(); // Modern 모드용 셰이더/VAO 초기화
+		render_modern_init();
 
-	// 메인 루프
 	while (!glfwWindowShouldClose(window))
 	{
 		render(window);

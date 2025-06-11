@@ -5,7 +5,6 @@
 #include "load_mesh.hpp"
 #include "modern.hpp"
 
-// 전역 VAO/프로그램
 extern GLuint vao, prog;
 
 #include <fstream>
@@ -27,7 +26,6 @@ std::string read_text_file(const char *filename)
 
 void render_modern_init()
 {
-	// 셰이더·VAO 준비
 	std::string vsrc_str = read_text_file("./shader/bunny.vert");
 	std::string fsrc_str = read_text_file("./shader/bunny.frag");
 	setup_shader_program(vsrc_str.c_str(), fsrc_str.c_str());

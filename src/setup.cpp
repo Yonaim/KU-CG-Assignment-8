@@ -8,7 +8,6 @@ void initGL()
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0.05f, 0.05f, 0.08f, 1.0f);
 	glEnable(GL_NORMALIZE);
-	glShadeModel(GL_SMOOTH);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glFrustum(-0.1, 0.1, -0.1, 0.1, 0.1, 1000.0);
